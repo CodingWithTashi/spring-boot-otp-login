@@ -4,6 +4,8 @@ import com.codingwithtashi.springsecurityjwt.config.TwilioConfig;
 import com.codingwithtashi.springsecurityjwt.model.User;
 import com.codingwithtashi.springsecurityjwt.repository.UserRepository;
 import com.twilio.Twilio;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @SpringBootApplication
+@OpenAPIDefinition( info = @Info(title = "Spring boot otp authentication",version = "1.0.0"))
 public class SpringSecurityJwtApplication {
 	@Autowired
 	private UserRepository repository;

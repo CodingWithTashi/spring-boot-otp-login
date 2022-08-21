@@ -42,7 +42,8 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         //enabled database access and auth end point access all the time
         httpSecurity.csrf().disable()
-                .authorizeRequests().antMatchers("/api/client/auth/**","/h2-console/**").permitAll().
+
+                .authorizeRequests().antMatchers(WHITELIST).permitAll().
                 anyRequest().authenticated().and().
                 exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
@@ -51,4 +52,15 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
+    private static final String[] WHITELIST = {
+            "/api/client/auth/**",
+            "/v2/api-docs",
+            "/configuration/ui",
+            "/swagger-resources/**",
+            "/configuration/security",
+            "/swagger-ui.html",
+            "/swagger-ui/**",
+            "/v3/api-docs/**",
+            "/webjars/**"
+    };
 }
