@@ -1,6 +1,10 @@
 # spring-boot-otp-login
 Spring boot OTP based login with Twilio and JWT token
 
+
+## Note
+`If you found any of my open source projects helpful, Don't forget to give them a star ⭐ and follow. It won't cost you a thing, but it will help inspire me to continue contribute more `
+
 ## Workflow
 1. User enter mobile no
 2. Generate OTP using Twilio
